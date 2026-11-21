@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    ":automergeMinor",
+    ":preserveSemverRanges"
+  ],
+  "git-submodules": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "description": "Group GitHub Actions updates",
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions"
+    },
+    {
+      "description": "Group Python dependency updates",
+      "matchManagers": ["pep621"],
+      "groupName": "Python"
+    },
+    {
+      "description": "Group Cargo dependency updates",
+      "matchManagers": ["cargo"],
+      "groupName": "Rust"
+    }
+  ]
+}
